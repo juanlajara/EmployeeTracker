@@ -4,46 +4,72 @@ const cTable = require("console.table");
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
-  host: "localhost",
+	host: "localhost",
 
-  // Your port; if not 3306
-  port: 3306,
+	// Your port; if not 3306
+	port: 3306,
 
-  // Your username
-  user: "root",
-
-  // Your password
-  password: "password",
-  database: "employee_DB",
+	// Your username
+	user: "root",
+	// Your password
+	password: "password",
+	database: "employee_DB",
 });
 
 // connect to the mysql server and sql database
 connection.connect(function (err) {
-  if (err) throw err;
-  // run the start function after the connection is made to prompt the user
-  //   start();
+	if (err) throw err;
+	// run the start function after the connection is made to prompt the user
+	start();
 });
 
 // // function which prompts the user for what action they should take
-// function start() {
-//   inquirer
-//     .prompt({
-//       name: "postOrBid",
-//       type: "list",
-//       message: "Would you like to [POST] an auction or [BID] on an auction?",
-//       choices: ["POST", "BID", "EXIT"],
-//     })
-//     .then(function (answer) {
-//       // based on their answer, either call the bid or the post functions
-//       if (answer.postOrBid === "POST") {
-//         postAuction();
-//       } else if (answer.postOrBid === "BID") {
-//         bidAuction();
-//       } else {
-//         connection.end();
-//       }
-//     });
-// }
+function start() {
+	inquirer
+		.prompt({
+			name: "menu",
+			type: "list",
+			message: "What action would you like to take",
+			choices: [
+				"View Departments",
+				"Add Department",
+				"View roles",
+				"Add roles",
+				"View employees",
+				"Add employees",
+				"Update employee roles",
+				"Exit",
+			],
+		})
+		.then(function (answer) {
+			console.log(answer);
+			// based on their answer, either call the bid or the post functions
+			switch (answer.menu) {
+				case "View Departments":
+					viewDepartments();
+					break;
+				case "Exit":
+					connection.end();
+					break;
+
+				default:
+					break;
+			}
+			// if (answer.postOrBid === "POST") {
+			// 	postAuction();
+			// } else if (answer.postOrBid === "BID") {
+			// 	bidAuction();
+			// } else {
+			// Placing matters to make sure to have it if you need to end
+			// }
+		});
+}
+
+function viewDepartments() {
+	// mysql how to make a sql call
+	// const cTable = require("console.table");
+	console.log("worked");
+}
 
 // // function to handle posting new items up for auction
 // function postAuction() {
