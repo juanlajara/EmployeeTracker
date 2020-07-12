@@ -67,7 +67,15 @@ function start() {
 function viewDepartments() {
 	// mysql how to make a sql call
 	// const cTable = require("console.table");
-	console.log("worked");
+	connection.query("SELECT 1 + 1 AS solution", function (
+		error,
+		results,
+		fields
+	) {
+		if (error) throw error;
+		console.log("The solution is: ", results[0].solution);
+	});
+	connection.end();
 }
 
 // // function to handle posting new items up for auction
