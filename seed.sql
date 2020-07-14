@@ -1,5 +1,6 @@
+-- Set the DB
+USE employee_DB;
 -- Populate Departments
-
 INSERT INTO department (id,name)
     VALUES
         (1,'Sales'),
