@@ -79,7 +79,7 @@ function viewDepartments() {
 		fields
 	) {
 		if (error) throw error;
-		console.log("Table Results: ", results);
+		console.table("Departments", results);
 		start();
 	});
 }
@@ -93,7 +93,7 @@ function viewRoles() {
 		fields
 	) {
 		if (error) throw error;
-		console.log("Table Results: ", results);
+		console.table("Roles", results);
 		start();
 	});
 }
@@ -105,7 +105,7 @@ function viewEmployees() {
 		fields
 	) {
 		if (error) throw error;
-		console.log("Table Results: ", results);
+		console.table("Employees", results);
 		start();
 	});
 }
@@ -123,9 +123,8 @@ function addDepartment() {
 				[answer.departmentName],
 				function (error, results, fields) {
 					if (error) throw error;
-					console.log("Added: ", [answer.departmentName]);
-					console.log("To: ", viewDepartments());
-					start();
+					console.log("Successfully Added: ", [answer.departmentName], "To: ");
+					viewDepartments();
 				}
 			);
 		});
@@ -145,6 +144,7 @@ function addRole() {
 				message: "What is the role's salary ?",
 			},
 			// Placeholder - See how to lookup the department IDs by prompting the user with Department Names
+			// Provide the user with a list of the departments
 		])
 		.then(function (answer) {
 			connection.query(
@@ -158,11 +158,11 @@ function addRole() {
 				function (error, results, fields) {
 					if (error) throw error;
 					console.log([
-						"Added: ",
+						"Successfully Added: ",
 						answer.title + ", salary " + answer.salary + " & department",
+						"To: ",
 					]);
-					console.log("To: ", viewRoles());
-					start();
+					viewRoles();
 				}
 			);
 		});
