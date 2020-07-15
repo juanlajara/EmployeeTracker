@@ -1,6 +1,8 @@
+//#region Packages
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 const cTable = require("console.table");
+//#endregion Packages
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
@@ -31,21 +33,32 @@ function start() {
 			message: "What action would you like to take",
 			choices: [
 				"View Departments",
-				"Add Department",
 				"View roles",
-				"Add roles",
 				"View employees",
+				"Add Department",
+				"Add role",
 				"Add employees",
 				"Update employee roles",
 				"Exit",
 			],
 		})
 		.then(function (answer) {
-			console.log(answer);
-			// based on their answer, either call the bid or the post functions
+			// based on their answer, allow the user to view,add or update database information
 			switch (answer.menu) {
 				case "View Departments":
 					viewDepartments();
+					break;
+				case "View roles":
+					viewRoles();
+					break;
+				case "View employees":
+					viewEmployees();
+					break;
+				case "Add Department":
+					addDepartment();
+					break;
+				case "Add role":
+					addRole();
 					break;
 				case "Exit":
 					connection.end();
@@ -54,30 +67,106 @@ function start() {
 				default:
 					break;
 			}
-			// if (answer.postOrBid === "POST") {
-			// 	postAuction();
-			// } else if (answer.postOrBid === "BID") {
-			// 	bidAuction();
-			// } else {
-			// Placing matters to make sure to have it if you need to end
-			// }
 		});
 }
 
 function viewDepartments() {
 	// mysql how to make a sql call
 	// const cTable = require("console.table");
-	connection.query("SELECT 1 + 1 AS solution", function (
+	connection.query("SELECT * FROM employee_DB.department;", function (
 		error,
 		results,
 		fields
 	) {
 		if (error) throw error;
-		console.log("The solution is: ", results[0].solution);
+		console.log("Table Results: ", results);
+		start();
 	});
-	connection.end();
 }
 
+function viewRoles() {
+	// mysql how to make a sql call
+	// const cTable = require("console.table");
+	connection.query("SELECT * FROM employee_DB.role;", function (
+		error,
+		results,
+		fields
+	) {
+		if (error) throw error;
+		console.log("Table Results: ", results);
+		start();
+	});
+}
+
+function viewEmployees() {
+	connection.query("SELECT * FROM employee_DB.employee;", function (
+		error,
+		results,
+		fields
+	) {
+		if (error) throw error;
+		console.log("Table Results: ", results);
+		start();
+	});
+}
+
+function addDepartment() {
+	inquirer
+		.prompt({
+			name: "departmentName",
+			type: "input",
+			message: "What is the Department name you would like to add?",
+		})
+		.then(function (answer) {
+			connection.query(
+				"INSERT INTO `employee_DB`.`department`(`name`)VALUES(?);",
+				[answer.departmentName],
+				function (error, results, fields) {
+					if (error) throw error;
+					console.log("Added: ", [answer.departmentName]);
+					console.log("To: ", viewDepartments());
+					start();
+				}
+			);
+		});
+}
+
+function addRole() {
+	inquirer
+		.prompt([
+			{
+				name: "title",
+				type: "input",
+				message: "What is the role's Title ?",
+			},
+			{
+				name: "salary",
+				type: "input",
+				message: "What is the role's salary ?",
+			},
+			// Placeholder - See how to lookup the department IDs by prompting the user with Department Names
+		])
+		.then(function (answer) {
+			connection.query(
+				"INSERT INTO `employee_DB`.`role`(`title`,`salary`,`department_id`)VALUES(?,?,?);",
+				[
+					answer.title,
+					Math.floor(parseInt(answer.salary)),
+					// Placeholder - Department ID 1
+					1,
+				],
+				function (error, results, fields) {
+					if (error) throw error;
+					console.log([
+						"Added: ",
+						answer.title + ", salary " + answer.salary + " & department",
+					]);
+					console.log("To: ", viewRoles());
+					start();
+				}
+			);
+		});
+}
 // // function to handle posting new items up for auction
 // function postAuction() {
 //   // prompt for info about the item being put up for auction
