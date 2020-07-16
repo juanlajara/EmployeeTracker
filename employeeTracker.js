@@ -71,9 +71,8 @@ function start() {
 }
 
 function viewDepartments() {
-	// mysql how to make a sql call
-	// const cTable = require("console.table");
-	connection.query("SELECT * FROM employee_DB.department;", function (
+	// Query the Database to view all the departments
+	connection.query("SELECT name FROM employee_DB.department;", function (
 		error,
 		results,
 		fields
@@ -87,15 +86,14 @@ function viewDepartments() {
 function viewRoles() {
 	// mysql how to make a sql call
 	// const cTable = require("console.table");
-	connection.query("SELECT * FROM employee_DB.role;", function (
-		error,
-		results,
-		fields
-	) {
-		if (error) throw error;
-		console.table("Roles", results);
-		start();
-	});
+	connection.query(
+		"SELECT title,salary,b.name as department FROM role a left join department b on a.department_id = b.id ;",
+		function (error, results, fields) {
+			if (error) throw error;
+			console.table("Roles", results);
+			start();
+		}
+	);
 }
 
 function viewEmployees() {
@@ -131,41 +129,74 @@ function addDepartment() {
 }
 
 function addRole() {
-	inquirer
-		.prompt([
-			{
-				name: "title",
-				type: "input",
-				message: "What is the role's Title ?",
-			},
-			{
-				name: "salary",
-				type: "input",
-				message: "What is the role's salary ?",
-			},
-			// Placeholder - See how to lookup the department IDs by prompting the user with Department Names
-			// Provide the user with a list of the departments
-		])
-		.then(function (answer) {
-			connection.query(
-				"INSERT INTO `employee_DB`.`role`(`title`,`salary`,`department_id`)VALUES(?,?,?);",
-				[
-					answer.title,
-					Math.floor(parseInt(answer.salary)),
-					// Placeholder - Department ID 1
-					1,
-				],
-				function (error, results, fields) {
-					if (error) throw error;
-					console.log([
-						"Successfully Added: ",
-						answer.title + ", salary " + answer.salary + " & department",
-						"To: ",
-					]);
-					viewRoles();
-				}
-			);
+	//#region Testing Area
+	let depArray = [];
+	let depNames = [];
+	connection.query("SELECT * FROM employee_DB.department;", function (
+		error,
+		results,
+		fields
+	) {
+		if (error) throw error;
+		depArray = results.map((obj) => {
+			// let rObj = [];
+			rObj = obj;
+			// `${obj.id}` + ":" + `${obj.name}`;
+			return rObj;
 		});
+		depNames = results.map((obj) => {
+			// let rObj = [];
+			rObj = obj.name;
+			// `${obj.id}` + ":" + `${obj.name}`;
+			return rObj;
+		});
+		inquirer
+			.prompt([
+				{
+					name: "title",
+					type: "input",
+					message: "What is the role's Title ?",
+				},
+				{
+					name: "salary",
+					type: "input",
+					message: "What is the role's salary ?",
+				},
+				{
+					name: "department",
+					type: "list",
+					message: "Which department does this role belong to ?",
+					choices: depNames,
+				},
+				// Placeholder - See how to lookup the department IDs by prompting the user with Department Names
+				// Provide the user with a list of the departments
+			])
+			.then(function (answer) {
+				connection.query(
+					"INSERT INTO `employee_DB`.`role`(`title`,`salary`,`department_id`)VALUES(?,?,?);",
+					[
+						answer.title,
+						Math.floor(parseInt(answer.salary)),
+						// Placeholder - Department ID 1
+						depArray[depNames.indexOf(answer.department)].id,
+					],
+					function (error, results, fields) {
+						if (error) throw error;
+						console.log([
+							"Successfully Added: ",
+							answer.title +
+								", salary " +
+								answer.salary +
+								" & department " +
+								answer.department,
+							"To: ",
+						]);
+						viewRoles();
+					}
+				);
+			});
+	});
+	//#endregion
 }
 // // function to handle posting new items up for auction
 // function postAuction() {
