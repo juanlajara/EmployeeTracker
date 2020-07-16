@@ -123,7 +123,9 @@ function addDepartment() {
 				function (error, results, fields) {
 					if (error) throw error;
 					// Show the user their answers and the Department table
-					console.log("Successfully Added: ", [answer.departmentName], "To: ");
+					console.log(
+						"Successfully Added: " + [answer.departmentName] + " To: "
+					);
 					viewDepartments();
 				}
 			);
@@ -187,11 +189,11 @@ function addRole() {
 						console.log(
 							"Successfully Added: " +
 								answer.title +
-								", salary " +
+								" with a salary of " +
 								answer.salary +
-								" & department " +
+								" to department " +
 								answer.department +
-								"To: Roles"
+								" To: "
 						);
 						viewRoles();
 					}
