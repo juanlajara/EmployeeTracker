@@ -133,7 +133,7 @@ function addDepartment() {
 function addRole() {
 	// Set up variables to store Department Details needed for the user's selection
 	let depArray = [];
-	let depNames = [];
+	// let depNames = [];
 	// Query Database for department names
 	connection.query("SELECT * FROM employee_DB.department;", function (
 		error,
@@ -147,10 +147,10 @@ function addRole() {
 			return rObj;
 		});
 		// Store the just the names of the department as an array
-		depNames = results.map((obj) => {
-			rObj = obj.name;
-			return rObj;
-		});
+		// depNames = results.map((obj) => {
+		// 	rObj = obj.name;
+		// 	return rObj;
+		// });
 		// Ask user the set of questions needed for adding a role
 		inquirer
 			.prompt([
@@ -168,7 +168,7 @@ function addRole() {
 					name: "department",
 					type: "list",
 					message: "Which department does this role belong to ?",
-					choices: depNames,
+					choices: depArray,
 				},
 			])
 			.then(function (answer) {
@@ -178,20 +178,21 @@ function addRole() {
 						answer.title,
 						// Insure the salary response is stored as an integer and drop the decimals
 						Math.floor(parseInt(answer.salary)),
-						depArray[depNames.indexOf(answer.department)].id,
+						// depArray[depNames.indexOf(answer.department)].id,
+						depArray.find(({ name }) => name === answer.department).id,
 					],
 					function (error, results, fields) {
 						if (error) throw error;
 						// Show the user their answers and the roles table
-						console.log([
-							"Successfully Added: ",
-							answer.title +
+						console.log(
+							"Successfully Added: " +
+								answer.title +
 								", salary " +
 								answer.salary +
 								" & department " +
-								answer.department,
-							"To: ",
-						]);
+								answer.department +
+								"To: Roles"
+						);
 						viewRoles();
 					}
 				);
