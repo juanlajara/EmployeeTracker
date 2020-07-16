@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 // connect to the mysql server and sql database
 connection.connect(function (err) {
 	if (err) throw err;
-	// run the start function after the connection is made to prompt the user
+	// start user prompt
 	start();
 });
 
@@ -43,7 +43,7 @@ function start() {
 			],
 		})
 		.then(function (answer) {
-			// based on their answer, allow the user to view,add or update database information
+			// based on the users answer, allow the user to view, add or update database information
 			switch (answer.menu) {
 				case "View Departments":
 					viewDepartments();
@@ -71,7 +71,7 @@ function start() {
 }
 
 function viewDepartments() {
-	// Query the Database to view all the departments
+	// Query the Database and render departments to the user
 	connection.query("SELECT name FROM employee_DB.department;", function (
 		error,
 		results,
@@ -84,8 +84,7 @@ function viewDepartments() {
 }
 
 function viewRoles() {
-	// mysql how to make a sql call
-	// const cTable = require("console.table");
+	// Query the Database and render roles to the user
 	connection.query(
 		"SELECT title,salary,b.name as department FROM role a left join department b on a.department_id = b.id ;",
 		function (error, results, fields) {
@@ -97,6 +96,7 @@ function viewRoles() {
 }
 
 function viewEmployees() {
+	// Query the Database and render employees to the user
 	connection.query("SELECT * FROM employee_DB.employee;", function (
 		error,
 		results,
@@ -109,6 +109,7 @@ function viewEmployees() {
 }
 
 function addDepartment() {
+	// ask the user for the details required to add a department
 	inquirer
 		.prompt({
 			name: "departmentName",
@@ -121,6 +122,7 @@ function addDepartment() {
 				[answer.departmentName],
 				function (error, results, fields) {
 					if (error) throw error;
+					// Show the user their answers and the Department table
 					console.log("Successfully Added: ", [answer.departmentName], "To: ");
 					viewDepartments();
 				}
@@ -129,27 +131,27 @@ function addDepartment() {
 }
 
 function addRole() {
-	//#region Testing Area
+	// Set up variables to store Department Details needed for the user's selection
 	let depArray = [];
 	let depNames = [];
+	// Query Database for department names
 	connection.query("SELECT * FROM employee_DB.department;", function (
 		error,
 		results,
 		fields
 	) {
+		// Store the results of the query as an array with the department details
 		if (error) throw error;
 		depArray = results.map((obj) => {
-			// let rObj = [];
 			rObj = obj;
-			// `${obj.id}` + ":" + `${obj.name}`;
 			return rObj;
 		});
+		// Store the just the names of the department as an array
 		depNames = results.map((obj) => {
-			// let rObj = [];
 			rObj = obj.name;
-			// `${obj.id}` + ":" + `${obj.name}`;
 			return rObj;
 		});
+		// Ask user the set of questions needed for adding a role
 		inquirer
 			.prompt([
 				{
@@ -168,20 +170,19 @@ function addRole() {
 					message: "Which department does this role belong to ?",
 					choices: depNames,
 				},
-				// Placeholder - See how to lookup the department IDs by prompting the user with Department Names
-				// Provide the user with a list of the departments
 			])
 			.then(function (answer) {
 				connection.query(
 					"INSERT INTO `employee_DB`.`role`(`title`,`salary`,`department_id`)VALUES(?,?,?);",
 					[
 						answer.title,
+						// Insure the salary response is stored as an integer and drop the decimals
 						Math.floor(parseInt(answer.salary)),
-						// Placeholder - Department ID 1
 						depArray[depNames.indexOf(answer.department)].id,
 					],
 					function (error, results, fields) {
 						if (error) throw error;
+						// Show the user their answers and the roles table
 						console.log([
 							"Successfully Added: ",
 							answer.title +
@@ -196,7 +197,6 @@ function addRole() {
 				);
 			});
 	});
-	//#endregion
 }
 // // function to handle posting new items up for auction
 // function postAuction() {
