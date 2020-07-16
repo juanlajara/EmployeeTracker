@@ -72,15 +72,14 @@ function start() {
 
 function viewDepartments() {
 	// Query the Database and render departments to the user
-	connection.query("SELECT name FROM employee_DB.department;", function (
-		error,
-		results,
-		fields
-	) {
-		if (error) throw error;
-		console.table("Departments", results);
-		start();
-	});
+	connection.query(
+		"SELECT name as Departments FROM employee_DB.department;",
+		function (error, results, fields) {
+			if (error) throw error;
+			console.table("Departments", results);
+			start();
+		}
+	);
 }
 
 function viewRoles() {
@@ -97,15 +96,14 @@ function viewRoles() {
 
 function viewEmployees() {
 	// Query the Database and render employees to the user
-	connection.query("SELECT * FROM employee_DB.employee;", function (
-		error,
-		results,
-		fields
-	) {
-		if (error) throw error;
-		console.table("Employees", results);
-		start();
-	});
+	connection.query(
+		"SELECT concat(a.first_name,' ',a.last_name) as 'Employee Name', b.title as Title, IFNULL(concat(c.first_name,' ',c.last_name),'') as 'Manager Name' FROM employee a left join role b on a.role_id = b.id left join employee c  on a.manager_id = c.id;",
+		function (error, results, fields) {
+			if (error) throw error;
+			console.table("Employees", results);
+			start();
+		}
+	);
 }
 
 function addDepartment() {
@@ -148,12 +146,6 @@ function addRole() {
 			rObj = obj;
 			return rObj;
 		});
-		// Store the just the names of the department as an array
-		// depNames = results.map((obj) => {
-		// 	rObj = obj.name;
-		// 	return rObj;
-		// });
-		// Ask user the set of questions needed for adding a role
 		inquirer
 			.prompt([
 				{
@@ -180,7 +172,6 @@ function addRole() {
 						answer.title,
 						// Insure the salary response is stored as an integer and drop the decimals
 						Math.floor(parseInt(answer.salary)),
-						// depArray[depNames.indexOf(answer.department)].id,
 						depArray.find(({ name }) => name === answer.department).id,
 					],
 					function (error, results, fields) {
