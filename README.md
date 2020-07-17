@@ -1,4 +1,6 @@
 <h1 align='center'>EmployeeTracker</h1>
+<img src="Assets/npm.svg" alt="npm" style="vertical-align:top; margin:4px">
+<img src="Assets/visualstudio_code.svg" alt="VsCode" style="vertical-align:top; margin:4px"><img>
 
 ## 💡 Project Overview
 
@@ -79,14 +81,24 @@ How do you deliver this? Here are some guidelines:
 
 ![Employee Tracker](Assets/employee-tracker.gif)
 
-## 📓 Contributor(s) and Peer coders
+## 📓 Contributor(s)
 
-| Team Member                                               | GitHub Link                              | LinkedIn Link                                                   | Role       |
-| --------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- | ---------- |
-| [Dre Lajara](https://juanlajara.github.io/portfolio.html) | [View](https://github.com/juanlajara)    | [View](https://www.linkedin.com/in/juan-andres-lajara-179a8442) | Lead       |
-| Kevin Holder                                              | [View](https://github.com/kholder777)    | [View](https://www.linkedin.com/in/kevin-holder-25476788/)      | Peer Coder |
-| Jordan Neill                                              | [View](https://github.com/jordanalexis6) | [View](https://www.linkedin.com/in/jordan-neill-a48b681a0/)     | Peer Coder |
-| Krystal Estarei Duran                                     | [View](https://github.com/KEDuran)       | [View](https://www.linkedin.com/in/krystal-e-duran-b64552123/)  | Peer Coder |
+<table>
+  <tr>
+    <td align="center"><a href="https://juanlajara.github.io/portfolio.html"><img src="https://avatars0.githubusercontent.com/u/54958540" width="100px;" alt=""/><br /><sub><b>Andres Lajara</b></sub></a><br />
+   <a href="https://github.com/juanlajara"><img src="./Assets/github.svg" width="20px;" alt=""></a>
+   <a href="https://www.linkedin.com/in/juan-andres-lajara-179a8442"><img src="./Assets/linkedin.svg" width="20px;" alt=""></a>
+    </td> 
+  </tr>
+</table>
+
+## 🧑🏻‍💻 Peer coders
+
+| Team Member  | GitHub Link                              | LinkedIn Link                                               | Role       |
+| ------------ | ---------------------------------------- | ----------------------------------------------------------- | ---------- |
+| Kevin Holder | [View](https://github.com/kholder777)    | [View](https://www.linkedin.com/in/kevin-holder-25476788/)  | Peer Coder |
+| Jordan Neill | [View](https://github.com/jordanalexis6) | [View](https://www.linkedin.com/in/jordan-neill-a48b681a0/) | Peer Coder |
+| Ashley Lerma | [View](https://github.com/AshleyLerma)   | [View](https://www.linkedin.com/in/ashleylerma/)            | Peer Coder |
 
 ## 🔥 Desired Future Enhancements
 
