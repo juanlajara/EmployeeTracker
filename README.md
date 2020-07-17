@@ -65,9 +65,7 @@ So that I can organize and plan my business
 
 - Next run `node employeeTracker.js` to start the application.
 
-  ### 📦 Tools & Packages
-
-  > #### NPM Packages
+  > #### 📦 NPM Packages
   >
   > - Used the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
   >
