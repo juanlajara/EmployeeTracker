@@ -60,6 +60,9 @@ function start() {
 				case "Add role":
 					addRole();
 					break;
+				case "Add employee":
+					addEmployees();
+					break;
 				case "Exit":
 					connection.end();
 					break;
@@ -142,10 +145,11 @@ function addRole() {
 	) {
 		// Store the results of the query as an array with the department details
 		if (error) throw error;
-
+		// Reshape the results of the department query to be an array with department details
 		let depArray = results.map((obj) => {
 			return { name: obj.name, value: obj };
 		});
+		// ask the user the required inputs for adding a role
 		inquirer
 			.prompt([
 				{
@@ -173,7 +177,6 @@ function addRole() {
 						// Insure the salary response is stored as an integer and drop the decimals
 						Math.floor(parseInt(answer.salary)),
 						answer.department.id,
-						// depArray.find(({ name }) => name === answer.department).id,
 					],
 					function (error, results, fields) {
 						if (error) throw error;
