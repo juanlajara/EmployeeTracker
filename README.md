@@ -81,12 +81,12 @@ How do you deliver this? Here are some guidelines:
 
 ## 📓 Contributor(s) and Peer coders
 
-| Team Member                                               | GitHub Link                                | LinkedIn Link                                                   |
-| --------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------- |
-| [Dre Lajara](https://juanlajara.github.io/portfolio.html) | [GitHub](https://github.com/juanlajara)    | [view](https://www.linkedin.com/in/juan-andres-lajara-179a8442) |
-| Kevin Holder                                              | [GitHub](https://github.com/kholder777)    | [view](https://www.linkedin.com/in/kevin-holder-25476788/)      |
-| Jordan Neill                                              | [GitHub](https://github.com/jordanalexis6) | [view](https://www.linkedin.com/in/jordan-neill-a48b681a0/)     |
-| Krystal Estarei Duran                                     | [GitHub](https://github.com/KEDuran)       | [view](https://www.linkedin.com/in/krystal-e-duran-b64552123/)  |
+| Team Member                                               | GitHub Link                              | LinkedIn Link                                                   | Role       |
+| --------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- | ---------- |
+| [Dre Lajara](https://juanlajara.github.io/portfolio.html) | [View](https://github.com/juanlajara)    | [View](https://www.linkedin.com/in/juan-andres-lajara-179a8442) | Lead       |
+| Kevin Holder                                              | [View](https://github.com/kholder777)    | [View](https://www.linkedin.com/in/kevin-holder-25476788/)      | Peer Coder |
+| Jordan Neill                                              | [View](https://github.com/jordanalexis6) | [View](https://www.linkedin.com/in/jordan-neill-a48b681a0/)     | Peer Coder |
+| Krystal Estarei Duran                                     | [View](https://github.com/KEDuran)       | [View](https://www.linkedin.com/in/krystal-e-duran-b64552123/)  | Peer Coder |
 
 ## 🔥 Desired Future Enhancements
 
