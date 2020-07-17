@@ -56,7 +56,7 @@ So that I can organize and plan my business
     <img src="./Assets/schema.png">
     </details>
 
-## 🧳 Setup and Instructions
+## 📦 Setup and Instructions
 
 - Ensure `Node.js` is installed on your machine. If `Node.js` is not installed on your machine, [click here](https://nodejs.org/en/) to download and install the application.
 - The `package.json` file included in this repo already lists all Node modules, NPM packages, and other dependencies that are required to successfully run this application. Please be sure to run the `npm install` command within the _terminal, while in_ the root directory to install all required modules/packages.
@@ -65,7 +65,7 @@ So that I can organize and plan my business
 
 - Next run `node employeeTracker.js` to start the application.
 
-  ### 📦 Tools & Packages
+  ### Tools & Packages
 
   > #### NPM Packages
   >
