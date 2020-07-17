@@ -142,10 +142,7 @@ function addRole() {
 	) {
 		// Store the results of the query as an array with the department details
 		if (error) throw error;
-		// depArray = results.map((obj) => {
-		// 	let rObj = { name: obj.name, value: obj };
-		// 	return rObj;
-		// });
+
 		let depArray = results.map((obj) => {
 			return { name: obj.name, value: obj };
 		});
