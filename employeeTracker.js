@@ -72,14 +72,15 @@ function start() {
 
 function viewDepartments() {
 	// Query the Database and render departments to the user
-	connection.query(
-		"SELECT name as Departments FROM employee_DB.department;",
-		function (error, results, fields) {
-			if (error) throw error;
-			console.table("Departments", results);
-			start();
-		}
-	);
+	connection.query("SELECT name FROM employee_DB.department;", function (
+		error,
+		results,
+		fields
+	) {
+		if (error) throw error;
+		console.table("Departments", results);
+		start();
+	});
 }
 
 function viewRoles() {
@@ -133,7 +134,6 @@ function addDepartment() {
 function addRole() {
 	// Set up variables to store Department Details needed for the user's selection
 	let depArray = [];
-	// let depNames = [];
 	// Query Database for department names
 	connection.query("SELECT * FROM employee_DB.department;", function (
 		error,
@@ -182,9 +182,9 @@ function addRole() {
 								answer.title +
 								" with a salary of " +
 								answer.salary +
-								" to department " +
+								" within the " +
 								answer.department +
-								" To: "
+								" Department To: "
 						);
 						viewRoles();
 					}
