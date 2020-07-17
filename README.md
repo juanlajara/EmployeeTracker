@@ -49,7 +49,7 @@ So that I can organize and plan my business
 - **Schema Visual Representation**:
 
     <details>
-    <summary>🌟 Screenshots (click to view/collapse)</summary>
+    <summary>🌟 Schema Diagram (click to view/collapse)</summary>
     1 of 1
     <img src="./Assets/schema.png">
     </details>
