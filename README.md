@@ -46,13 +46,13 @@ So that I can organize and plan my business
   - **role_id** - INT to hold reference to role employee has
   - **manager_id** - INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
 
-Schema Visual Representation:
+- **Schema Visual Representation**:
 
-<details>
-<summary>🌟 Screenshots (click to view/collapse)</summary>
-1 of 2
-<img src="./Assets/schema.png">
-</details>
+    <details>
+    <summary>🌟 Screenshots (click to view/collapse)</summary>
+    1 of 1
+    <img src="./Assets/schema.png">
+    </details>
 
 ## 📦 Setup and Instructions:
 
