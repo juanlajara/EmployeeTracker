@@ -133,7 +133,7 @@ function addDepartment() {
 
 function addRole() {
 	// Set up variables to store Department Details needed for the user's selection
-	let depArray = [];
+
 	// Query Database for department names
 	connection.query("SELECT * FROM employee_DB.department;", function (
 		error,
@@ -142,9 +142,12 @@ function addRole() {
 	) {
 		// Store the results of the query as an array with the department details
 		if (error) throw error;
-		depArray = results.map((obj) => {
-			rObj = obj;
-			return rObj;
+		// depArray = results.map((obj) => {
+		// 	let rObj = { name: obj.name, value: obj };
+		// 	return rObj;
+		// });
+		let depArray = results.map((obj) => {
+			return { name: obj.name, value: obj };
 		});
 		inquirer
 			.prompt([
@@ -172,7 +175,8 @@ function addRole() {
 						answer.title,
 						// Insure the salary response is stored as an integer and drop the decimals
 						Math.floor(parseInt(answer.salary)),
-						depArray.find(({ name }) => name === answer.department).id,
+						answer.department.id,
+						// depArray.find(({ name }) => name === answer.department).id,
 					],
 					function (error, results, fields) {
 						if (error) throw error;
