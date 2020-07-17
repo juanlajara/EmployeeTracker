@@ -81,12 +81,12 @@ How do you deliver this? Here are some guidelines:
 
 ## 📓 Contributor(s)
 
-| Team Member                                               | GitHub Link                                | LinkedIn Link                                                       |
-| --------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------- |
-| [Dre Lajara](https://juanlajara.github.io/portfolio.html) | [GitHub](https://github.com/juanlajara)    | [LinkedIn](https://www.linkedin.com/in/juan-andres-lajara-179a8442) |
-| Kevin Holder                                              | [GitHub](https://github.com/kholder777)    | [LinkedIn](https://www.linkedin.com/in/kevin-holder-25476788/)      |
-| Jordan Neill                                              | [GitHub](https://github.com/jordanalexis6) | [LinkedIn](https://www.linkedin.com/in/jordan-neill-a48b681a0/)     |
-| Krystal Estarei Duran                                     | [GitHub](https://github.com/KEDuran)       | [Linked](https://www.linkedin.com/in/krystal-e-duran-b64552123/)    |
+    | Team Member                                               | GitHub Link                                | LinkedIn Link                                                       |
+    | --------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------- |
+    | [Dre Lajara](https://juanlajara.github.io/portfolio.html) | [GitHub](https://github.com/juanlajara)    | [LinkedIn](https://www.linkedin.com/in/juan-andres-lajara-179a8442) |
+    | Kevin Holder                                              | [GitHub](https://github.com/kholder777)    | [LinkedIn](https://www.linkedin.com/in/kevin-holder-25476788/)      |
+    | Jordan Neill                                              | [GitHub](https://github.com/jordanalexis6) | [LinkedIn](https://www.linkedin.com/in/jordan-neill-a48b681a0/)     |
+    | Krystal Estarei Duran                                     | [GitHub](https://github.com/KEDuran)       | [Linked](https://www.linkedin.com/in/krystal-e-duran-b64552123/)    |
 
 ## 🔥 Desired Future Enhancements
 
