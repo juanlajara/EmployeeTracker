@@ -1,6 +1,5 @@
 <h1 align='center'>EmployeeTracker</h1>
-<img src="Assets/npm.svg" alt="npm" style="vertical-align:top; margin:4px">
-<img src="Assets/visualstudio_code.svg" alt="VsCode" style="vertical-align:top; margin:4px"><img>
+<img src="Assets/npm.svg" alt="npm" style="vertical-align:left; margin:4px"><img src="Assets/visualstudio_code.svg" alt="VsCode" style="vertical-align:left; margin:4px"><img>
 
 ## 💡 Project Overview
 
