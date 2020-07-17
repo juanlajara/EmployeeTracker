@@ -1,50 +1,34 @@
 # EmployeeTracker
 
-Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. In this homework assignment, your challenge is to architect and build a solution for managing a company's employees using node, inquirer, and MySQL.
+Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. In this assignment, we will architect and build a solution for managing a company's employees using node, inquirer, and MySQL.
 
-## Instructions
+## Database Schema
 
 Design the following database schema containing three tables:
 
 ![Database Schema](Assets/schema.png)
 
-* **department**:
+- **department**:
 
-  * **id** - INT PRIMARY KEY
-  * **name** - VARCHAR(30) to hold department name
+  - **id** - INT PRIMARY KEY
+  - **name** - VARCHAR(30) to hold department name
 
-* **role**:
+- **role**:
 
-  * **id** - INT PRIMARY KEY
-  * **title** -  VARCHAR(30) to hold role title
-  * **salary** -  DECIMAL to hold role salary
-  * **department_id** -  INT to hold reference to department role belongs to
+  - **id** - INT PRIMARY KEY
+  - **title** - VARCHAR(30) to hold role title
+  - **salary** - DECIMAL to hold role salary
+  - **department_id** - INT to hold reference to department role belongs to
 
-* **employee**:
+- **employee**:
 
-  * **id** - INT PRIMARY KEY
-  * **first_name** - VARCHAR(30) to hold employee first name
-  * **last_name** - VARCHAR(30) to hold employee last name
-  * **role_id** - INT to hold reference to role employee has
-  * **manager_id** - INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
-  
-Build a command-line application that at a minimum allows the user to:
+  - **id** - INT PRIMARY KEY
+  - **first_name** - VARCHAR(30) to hold employee first name
+  - **last_name** - VARCHAR(30) to hold employee last name
+  - **role_id** - INT to hold reference to role employee has
+  - **manager_id** - INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
 
-  * Add departments, roles, employees
-
-  * View departments, roles, employees
-
-  * Update employee roles
-
-Bonus points if you're able to:
-
-  * Update employee managers
-
-  * View employees by manager
-
-  * Delete departments, roles, and employees
-
-  * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
+## User Story
 
 We can frame this challenge as follows:
 
@@ -56,51 +40,46 @@ So that I can organize and plan my business
 
 How do you deliver this? Here are some guidelines:
 
-* Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
+- Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
 
-* Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
+- Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
 
-* Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
+- Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
 
-* You may wish to have a separate file containing functions for performing specific SQL queries you'll need to use. Could a constructor function or a class be helpful for organizing these?
+- You may wish to have a separate file containing functions for performing specific SQL queries you'll need to use. Could a constructor function or a class be helpful for organizing these?
 
-* You will need to perform a variety of SQL JOINS to complete this assignment, and it's recommended you review the week's activities if you need a refresher on this.
+- You will need to perform a variety of SQL JOINS to complete this assignment, and it's recommended you review the week's activities if you need a refresher on this.
 
 ![Employee Tracker](Assets/employee-tracker.gif)
 
-### Hints
-
-* You may wish to include a `seed.sql` file to pre-populate your database. This will make development of individual features much easier.
-
-* Focus on getting the basic functionality completed before working on more advanced features.
-
-* Review the week's activities for a refresher on MySQL.
-
-* Check out [SQL Bolt](https://sqlbolt.com/) for some extra MySQL help.
-
 ## Minimum Requirements
 
-* Functional application.
+- Functional application.
 
-* GitHub repository with a unique name and a README describing the project.
+- GitHub repository with a unique name and a README describing the project.
 
-* The command-line application should allow users to:
+- The command-line application should allow users to:
 
-  * Add departments, roles, employees
+  - Add departments, roles, employees
 
-  * View departments, roles, employees
+  - View departments, roles, employees
 
-  * Update employee roles
+  - Update employee roles
 
 ## Bonus
 
-* The command-line application should allow users to:
+- The command-line application should allow users to:
 
-  * Update employee managers
+  - Update employee managers
 
-  * View employees by manager
+  - View employees by manager
 
-  * Delete departments, roles, and employees
+  - Delete departments, roles, and employees
 
-  * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
+  - View the total utilized budget of a department -- ie the combined salaries of all employees in that department
 
+  ### Getting Started
+
+- Use the `schema.sql` to create the database in [MySQL](https://www.mysqltutorial.org/) then run the `seed.sql` file to pre-populate your database. This will make the development and testing of individual features much easier.
+- For assistance on how to install and connect to [MySQL](https://www.mysqltutorial.org/getting-started-with-mysql/)
+- Check out [SQL Bolt](https://sqlbolt.com/) for some extra MySQL help.
