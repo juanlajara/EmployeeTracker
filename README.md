@@ -59,7 +59,7 @@ So that I can organize and plan my business
 - Ensure `Node.js` is installed on your machine. If `Node.js` is not installed on your machine, [click here](https://nodejs.org/en/) to download and install the application.
 - The `package.json` file included in this repo already lists all Node modules, NPM packages, and other dependencies that are required to successfully run this application. Please be sure to run the `npm install` command within the _terminal, while in_ the root directory to install all required modules/packages.
 - Use the `schema.sql` to create the database in [MySQL](https://www.mysqltutorial.org/).For assistance on how to install, creat and connect to [MySQL](https://www.mysqltutorial.org/getting-started-with-mysql/) - simply click this link.
-- (Optional) then run the `seed.sql` file to pre-populate your database. This will make the development and testing of individual features much easier.Check out [SQL Bolt](https://sqlbolt.com/) for some extra MySQL help.
+- (Optional) then run the `seed.sql` file to pre-populate your database. This will make the development and testing of individual features much easier. Check out [SQL Bolt](https://sqlbolt.com/) for some extra MySQL help.
 
 - Next run `node employeeTracker.js` to start the application.
 
