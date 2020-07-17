@@ -66,6 +66,7 @@ function start() {
 					break;
 				case "Update employee roles":
 					updateEmpRole();
+					break;
 				case "Exit":
 					connection.end();
 					break;
