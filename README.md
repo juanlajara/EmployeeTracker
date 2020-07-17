@@ -1,4 +1,6 @@
 <h1 align='center'>EmployeeTracker</h1>
+  <div align='center'>
+    <img height="32" width="32" style="vertical-align:center;margin:4px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/npm.svg" /img><img  height="32" width="32" padding-left="25px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/visualstudiocode.svg" style="vertical-align:center; margin:5px" </img> </div>
 
 ## 💡 Project Overview
 
@@ -54,7 +56,7 @@ So that I can organize and plan my business
     <img src="./Assets/schema.png">
     </details>
 
-## 📦 Setup and Instructions
+## 🧳 Setup and Instructions
 
 - Ensure `Node.js` is installed on your machine. If `Node.js` is not installed on your machine, [click here](https://nodejs.org/en/) to download and install the application.
 - The `package.json` file included in this repo already lists all Node modules, NPM packages, and other dependencies that are required to successfully run this application. Please be sure to run the `npm install` command within the _terminal, while in_ the root directory to install all required modules/packages.
@@ -63,7 +65,7 @@ So that I can organize and plan my business
 
 - Next run `node employeeTracker.js` to start the application.
 
-  ### 🧳 Tools & Packages
+  ### 📦 Tools & Packages
 
   > #### NPM Packages
   >
@@ -72,9 +74,6 @@ So that I can organize and plan my business
   > - Used [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
   >
   > - Used [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
-
-  <div align='center'>
-    <img height="32" width="32" style="vertical-align:center;margin:4px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/npm.svg" /img><img  height="32" width="32" padding-left="25px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/visualstudiocode.svg" style="vertical-align:center; margin:5px" </img> </div>
 
 ## 📽️ The following animation demonstrates the application's functionality:
 
