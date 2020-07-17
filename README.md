@@ -88,11 +88,11 @@ So that I can organize and plan my business
 
 ## 🧑🏻‍💻 Peer coders
 
-| Team Member  | GitHub Link                              | LinkedIn Link                                               | Role       |
-| ------------ | ---------------------------------------- | ----------------------------------------------------------- | ---------- |
-| Kevin Holder | [View](https://github.com/kholder777)    | [View](https://www.linkedin.com/in/kevin-holder-25476788/)  | Peer Coder |
-| Jordan Neill | [View](https://github.com/jordanalexis6) | [View](https://www.linkedin.com/in/jordan-neill-a48b681a0/) | Peer Coder |
-| Ashley Lerma | [View](https://github.com/AshleyLerma)   | [View](https://www.linkedin.com/in/ashleylerma/)            | Peer Coder |
+| Team Member  | GitHub Link                              | LinkedIn Link                                               |
+| ------------ | ---------------------------------------- | ----------------------------------------------------------- |
+| Kevin Holder | [View](https://github.com/kholder777)    | [View](https://www.linkedin.com/in/kevin-holder-25476788/)  |
+| Jordan Neill | [View](https://github.com/jordanalexis6) | [View](https://www.linkedin.com/in/jordan-neill-a48b681a0/) |
+| Ashley Lerma | [View](https://github.com/AshleyLerma)   | [View](https://www.linkedin.com/in/ashleylerma/)            |
 
 ## 🔥 Desired Future Enhancements
 
