@@ -90,7 +90,7 @@ So that I can organize and plan my business
   </tr>
 </table>
 
-## 🧑🏻‍💻 Peer coders
+## <img src="Assets/peerCoders.gif" width="30px"> Peer coders
 
 | Team Member  | GitHub Link                              | LinkedIn Link                                               |
 | ------------ | ---------------------------------------- | ----------------------------------------------------------- |
