@@ -90,6 +90,15 @@ So that I can organize and plan my business
   </tr>
 </table>
 
+<details>
+  <summary>Click to View More</summary>
+  
+  <br>
+  
+  [![Github Stats By Anurag](https://github-readme-stats.vercel.app/api?username=juanlajara&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)](https://github.com/anuraghazra/github-readme-stats)
+
+  </details>
+
 ## <img src="Assets/peerCoders.gif" width="30px"> Peer coders
 
 | Team Member  | GitHub Link                              | LinkedIn Link                                               |
