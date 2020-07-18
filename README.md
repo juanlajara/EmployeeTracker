@@ -87,7 +87,7 @@ So that I can organize and plan my business
    <a href="https://github.com/juanlajara"><img src="./Assets/github.svg" width="20px;" alt=""></a>
    <a href="https://www.linkedin.com/in/juan-andres-lajara-179a8442"><img src="./Assets/linkedin.svg" width="20px;" alt=""></a>
     <details>
-      <summary style="font-size:10px">>click to view more</summary>
+      <summary style="font-size:10px"><b>Click<b> to view More</summary>
 
 [![Github Stats By Anurag](https://github-readme-stats.vercel.app/api?username=juanlajara&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)](https://github.com/anuraghazra/github-readme-stats)
 
