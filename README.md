@@ -79,7 +79,7 @@ So that I can organize and plan my business
 
 ![Employee Tracker](Assets/employee-tracker.gif)
 
-## 📓 Contributor(s)
+## <img src="Assets/settings.gif" width="30px"> Contributor(s)
 
 <table>
   <tr>
