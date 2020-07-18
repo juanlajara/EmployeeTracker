@@ -83,7 +83,7 @@ So that I can organize and plan my business
 
 <table>
   <tr>
-    <td align="center"><a href="https://juanlajara.github.io/portfolio.html"><img src="https://avatars0.githubusercontent.com/u/54958540" width="100px;" alt=""/><br /><sub><b>Andres Lajara</b></sub></a><br />
+    <td align="center"><a href="https://juanlajara.github.io/portfolio.html"><img src="https://avatars0.githubusercontent.com/u/54958540" width="100px;" /><br /><sub><b>Andres Lajara</b></sub></a><br />
    <a href="https://github.com/juanlajara"><img src="./Assets/github.svg" width="20px;" alt=""></a>
    <a href="https://www.linkedin.com/in/juan-andres-lajara-179a8442"><img src="./Assets/linkedin.svg" width="20px;" alt=""></a>
     <details>
